@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/alissa1228/movieQl.git",
   "author": "alissa1228<68986081+alissa1228@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3"
+  }
 }
