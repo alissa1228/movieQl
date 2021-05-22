@@ -1,0 +1,5 @@
+# 사용자가 뭘 할 지에 대해서 정의하는 곳.
+
+type Query{
+    name: String!
+}
