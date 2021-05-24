@@ -1,11 +1,13 @@
 # 사용자가 뭘 할 지에 대해서 정의하는 곳.
 
-type croco {
-    name:String!,
-    age:Int!,
+type person{
+    id: Int!
+    name:String!
+    age:Int!
     gender:String!
 }
 
 type Query{
-    person: croco!
+    people: [person]!
+    person(id:Int): person!
 }
