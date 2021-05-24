@@ -1,10 +1,15 @@
 import { GraphQLServer } from 'graphql-yoga';
 //import resolvers from './graphql/resolvers';
 
+const croco = {
+  name : "crocodile",
+  age: 20,
+  gender: "female"
+}
 
 const resolvers = {
     Query: {
-      name: () => "croco"
+      person: () => croco
     }
   };
   
