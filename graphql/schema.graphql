@@ -6,10 +6,11 @@ type movie{
     rating:Float!
     summary:String!
     language:String!
+    genres:[String]!
     medium_cover_image:String!
 }
 
 type Query{
-    movies: [movie]!
+    movies(limit: Int, rating:Float): [movie]!
 }
 
