@@ -6,12 +6,14 @@
   "repository": "https://github.com/alissa1228/movieQl.git",
   "author": "alissa1228<68986081+alissa1228@users.noreply.github.com>",
   "license": "MIT",
-  "nodemonConfig":{
-    "ignore":"index.js",
-    "delay":2500
+  "nodemonConfig": {
+    "ignore": "index.js",
+    "delay": 2500
   },
   "dependencies": {
+    "@types/node-fetch": "^2.5.10",
     "graphql-yoga": "^1.18.3",
+    "node-fetch": "^2.6.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },

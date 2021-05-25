@@ -1,26 +1,15 @@
 # 사용자가 뭘 할 지에 대해서 정의하는 곳.
 
-type person{
-    id: Int!
-    name:String!
-    age:Int!
-    gender:String!
-}
-
 type movie{
     id:Int!
-    name:String!
-    score:Float!
+    title:String!
+    rating:Float!
+    summary:String!
+    language:String!
+    medium_cover_image:String!
 }
 
 type Query{
     movies: [movie]!
-    movie(id:Int!):movie
-    people: [person]!
-    person(id:Int): person!
 }
 
-type Mutation{
-    addMovie(name:String!,score:Float!): movie!
-    deleteMovie(id:Float!): Boolean
-}
