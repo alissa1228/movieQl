@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@types/node-fetch": "^2.5.10",
+    "axios": "^0.21.1",
     "graphql-yoga": "^1.18.3",
     "node-fetch": "^2.6.1",
     "ts-node": "^9.1.1",

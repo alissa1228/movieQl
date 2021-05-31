@@ -1,16 +1,45 @@
-import fetch from 'node-fetch'
-;//내 서버와 다른 URL을 통합하고 싶을 때의 예시.
-const API_URL = "https://yts.mx/api/v2/list_movies.json?";
+import axios from "axios";
+const BASE_URL = "https://yts-proxy.now.sh/";
+const LIST_MOVIES_URL = `${BASE_URL}list_movies.json`;
+const MOVIE_DETAILS_URL = `${BASE_URL}movie_details.json`;
+const MOVIE_SUGGESTIONS_URL = `${BASE_URL}movie_suggestions.json`;
 
-export const getMovies = (limit, rating) => {
-  let req_url = API_URL;
-  //limit가 0보다 크면 요청 url에 해당 string 추가.
-  if(limit>0) {
-    req_url += `limit=${limit}`
-  }
-  if(rating>0){
-    req_url += `&minimum_rating=${rating}`
-  }
- return fetch(req_url).then(res=> res.json()).then(json=> json.data.movies);
- }
- 
+export const getMovies = async (limit, rating) => {
+  const {
+    data: {
+      data: { movies }
+    }
+  } = await axios(LIST_MOVIES_URL, {
+    params: {
+      limit,
+      minimum_rating: rating
+    }
+  });
+  return movies;
+};
+
+export const getMovie = async id => {
+  const {
+    data: {
+      data: { movie }
+    }
+  } = await axios(MOVIE_DETAILS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
+  return movie;
+};
+
+export const getSuggestions = async id => {
+  const {
+    data: {
+      data: { movies }
+    }
+  } = await axios(MOVIE_SUGGESTIONS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
+  return movies;
+};
