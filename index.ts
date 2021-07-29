@@ -1,4 +1,4 @@
-import { GraphQLServer } from 'graphql-yoga';
+import { GraphQLServer} from 'graphql-yoga';
 import resolvers from './graphql/resolvers';
 
 //server라는 새로운 변수를 만들고 여기에 새로운 graphQLServer를 만들어서 환경 설정을 해주면 된다.
